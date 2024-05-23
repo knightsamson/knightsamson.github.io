@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About - Social Media
+{% endblock %}
+
+{% block body %}
+
+<head>
+    <style>
+        body {
+            background-color: #c3b680;
+        }
+
+        .smashinglogo {
+            background: url(./static/img/Banner2.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<!--Title of page-->
+<section id="first" class="story" data-speed="8" data-type="background">
+    <div class="smashinglogo" data-offsetY="100" data-Xposition="50%" data-speed="-2">
+
+        <div class="banner-introduction-content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="space80"></div>
+            <h1 class="team-member-desktop">Social Media</h1>
+            <h1 class="team-member-phone">Social <br/> Media</h1>
+        </div>
+    </div>
+</section>
+<!--End Title of page-->
+
+<div class="space"></div>
+
+<!--Social Embedded-->
+<div class="container">
+    <div class="columnss">
+        <div class="columns">
+            <h3 class="title-social">Instagram</h3>
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="{{instagramLink[0][2]}}"
+                data-instgrm-version="14">
+            </blockquote>
+        </div>
+        <div class="columns">
+            <h3 class="title-social">Flickr</h3>
+            <a data-flickr-embed="true" data-header="true" href="{{flickrLink[0][2]}}"
+                title="Rowing Club Website Photos">
+                <img class="img-flickr" src="https://live.staticflickr.com/65535/53363279328_7c61e0c1cc_z.jpg"
+                    alt="Rowing Club Website Photos" />
+            </a>
+            <div class="space"></div>
+        </div>
+    </div>
+</div>
+<!--End Social Embedded-->
+<div class="space80"></div>
+
+
+<script src="./static/js/swiper-bundle.min.js"></script>
+<script async src="//www.instagram.com/embed.js"></script>
+<script src="./static/js/script.js"></script>
+<script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+{% endblock %}
+

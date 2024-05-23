@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block custom_head %}
+<style>
+	body {
+		background-color: #c3b680;
+	}
+
+	.hold {
+		position: relative;
+		text-align: center;
+	}
+
+</style>
+{% endblock %}
+
+{% block title %}
+Alumni - Rowing Club
+{% endblock %}
+
+{% block body %}
+<!--copied from the about us page-->
+
+<body>
+	<!--Alumni Introduction Banner-->
+	<div class="hold">
+		<div class="container-fluid px-0 shadow-lg">
+			<div class="overlay banner-introduction-content" data-aos="fade-up" data-aos-duration="1000">
+				<h1 class="hero-heading2">Alumni</h1>
+			</div>
+
+			<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" 
+						class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+						aria-label="Slide 2"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active" data-bs-interval="5000">
+						<img src="./static/img/p13.png" class="d-block w-100" alt="Alum1">
+						<div class="carousel-caption d-none d-md-block">
+						</div>
+					</div>
+					<div class="carousel-item" data-bs-interval="2000">
+						<img src="./static/img/p9.jpg" class="d-block w-100" alt="Alum2">
+						<div class="carousel-caption d-none d-md-block">
+						</div>
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+					data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+					data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+
+		</div>
+		<!-- Alumni Association Text Boxes -->
+		<div class="container-xxl py-5">
+			<div class="container">
+				<div class="row g-4">
+					{{block1[0][2] | safe}}
+				</div>
+			</div>
+		</div>
+
+		<div class="space15"></div>
+
+		<!-- Mailing List Button -->
+		<div class="video-introduction-content">
+			<h1 data-aos="fade-up" data-aos-duration="1000" class="hero-heading">Join our Mailing List!</h1>
+			<a data-aos="fade-down" data-aos-duration="1000" href="{{mailingFormLink[0][2]}}">Sign-up</a>
+		</div>
+
+		<div class="space"></div>
+
+		<!-- Alumni Database and Text Boxes -->
+		<div class="container">
+			{{block2[0][2] | safe}}
+		</div>
+		<div class="space80"></div>
+	</div>
+</body>
+
+<style>
+	/* Footer removal */
+	footer {
+			display: none;
+	}
+</style>
+
+
+{% endblock %}

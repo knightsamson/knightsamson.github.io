@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Donate - Rowing Club
+{% endblock %}
+
+{% block body %}
+
+<!--First Block for Video introduction-->
+<section class="video-introduction">
+    <div>
+        <!--Video Introduction page for Desktop-->
+        <!--Video link: -->
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="./static/video/handshake.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-introduction-content">
+            <h1 data-aos="fade-up" data-aos-duration="1000" class="hero-heading">Contribute</h1>
+            <a data-aos="fade-down" data-aos-duration="1000" href="/contact">More information</a>
+        </div>
+    </div>
+</section>
+<!--End First Block for Video introduction-->
+<div class="tm-page-wrap mx-auto">
+    <section class="p-5 tm-container-outer tm-bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 mx-auto tm-about-text-wrap text-center">
+                    {{makedonation[0][2] | safe}}
+                    <div class="donate-button">
+                        <div class="recruitment-button2">
+                            <a class="hello" href="{{donateLink[0][2]}}">Click here</a>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="space"></div>
+
+    <div class="container-fluid">
+        <div class="container-fluid bg-2 text-center"> 
+            <div id="block-title3">
+                {{additional_donate_block[0][2] | safe}}
+            </div>
+        </div>
+    </div>  
+    <div class="space80"></div>
+</div>
+
+<div class="space"></div>
+<!--Block Interested-->
+<div class="background-block"
+    style="background-image: url(./static/img/rowing.jpeg); background-size: cover;  background-position: fixed;">
+    <div class="space15"></div>
+    <div class="space80"></div>
+    <div class="row">
+        <div class="column" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Have questions?</h2>
+            <h2>please contact us</h2>
+        </div>
+        <div class="column">
+            <div class="recruitment-button">
+                <a data-aos="fade-up" data-aos-duration="1000" href="/contact">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="space15"></div>
+        <div class="space80"></div>
+    </div>
+</div>
+<!--END Block interested-->
+
+<!--Swiper Js-->
+<script src="./static/js/swiper-bundle.min.js"></script>
+
+<!--Javascript-->
+<script src="./static/js/script.js"></script>
+
+<!--Amination-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+{% endblock %}

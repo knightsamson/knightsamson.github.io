@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block custom_head %}
+<!-- Background Color -->
+	<style>
+		body {
+			background-color: #c3b680;
+		}
+
+		.smashinglogo {
+			background: url(./static/img/about_banner.jpg);
+			background-size: cover;
+			background-position: center;
+			height: 400px;
+		}
+	</style>
+{% endblock %}
+
+{% block title %}
+About - Rowing Club
+{% endblock %}
+
+{% block body %}
+
+<!--About US Introduction Banner-->
+<section id="first" class="story" data-speed="8" data-type="background">
+	<div class="smashinglogo" data-offsetY="100" data-Xposition="50%" data-speed="-2">
+
+		<div class="banner-introduction-content" data-aos="fade-up" data-aos-duration="1000">
+			<div class="space80"></div>
+			<div class="space80"></div>
+			<h1 class="hero-heading">About Us</h1>
+		</div>
+	</div>
+</section>
+
+<div class="container-xxl py-5">
+	<div class="container">
+		<div class="row g-4 align-items-center">
+			{{content[0][2] | safe}}
+		</div>
+	</div>
+</div>
+
+<!-- End of "About Us" Title + Card with description -->
+
+
+<!-- "Meet the Officers!" Title + Cards with pictures and description -->
+<div class="text-heading mx-auto">
+	<h1>Meet The Officers!</h1>
+</div>
+<div class="space15"></div>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" />
+	<div class="container">
+		<div class="row justify-content-center">
+			{% for tup in officers %}
+			<div class="col-md-6 col-lg-3 mb-30">
+				<div class="team-item" data-aos="fade-down" data-aos-duration="1000">
+					<div class="mb-30 position-relative d-flex align-items-center">
+						<span class="img-holder d-inline-block">
+							<img src="static/image_uploads/{{ tup[2] }}" alt="Team">
+						</span>
+					</div>
+					<div class="team-content">
+						<h5 class="mb-2">{{ tup[0] }}</h5>
+						<p class="text-uppercase mb-0"> <strong> {{ tup[1] }} </strong></p>
+						<p class="text-uppercase mb-0">{{ tup[3] }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+<!--Block Interested-->
+<div class="background-block" style="background-image: url(./static/img/rowing.jpeg); background-size: cover;  background-position: fixed;">
+	<div class="space15"></div>
+	<div class="space80"></div>
+	<div class="row">
+		<div class="column" data-aos="fade-up" data-aos-duration="1000">
+			<h2>Are you interested
+			<br/>in joining?</h2>
+		</div>
+		<div class="column">
+			<div class="recruitment-button">
+				<a data-aos="fade-up" data-aos-duration="1000"
+					href="{{joinusLink[0][2]}}">Join us</a>
+			</div>
+		</div>
+		<div style="padding-bottom: 110px;"></div>
+	</div>
+	<div class="space15"></div>
+</div>
+<!--END Block interested-->
+
+<!--Amination-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+	AOS.init();
+</script>
+{% endblock %}

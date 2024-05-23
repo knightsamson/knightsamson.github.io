@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Join Us - Rowing Club
+{% endblock %}
+
+
+
+{% block body %}
+<!--First Block for Video introduction-->
+<section class="video-introduction">
+    <div>
+        <!--Video Introduction page for Desktop-->
+        <!--Video link: https://www.youtube.com/watch?v=sLiYTegsyxk-->
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="./static/video/video_introduction.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-introduction-content">
+            <h1 data-aos="fade-up" data-aos-duration="1000" class="hero-heading">Join the Team</h1>
+            <a data-aos="fade-down" data-aos-duration="1000"
+                href="{{joinusLink[0][2]}}">Click here</a>
+        </div>
+    </div>
+</section>
+<!--End First Block for Video introduction-->
+
+<!--Block: Why Us?-->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            {{block1[0][2] | safe}}
+        </div>
+    </div>
+</div>
+<!--End Block Why Us?-->
+
+<!-- Block Why Us? (cont) -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+            {{block2[0][2] | safe}}
+        </div>
+    </div>
+</div>
+<!-- End: Block Why Us? (cont) -->
+
+<!--Block: Interested: Join us-->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            {{block3[0][2] | safe}}
+        </div>
+    </div>
+</div>
+<!--EndBlock: Interested: Join us-->
+
+<!--Testimonial Block-->
+<div class="text-heading-background">
+    <div class="text-heading">
+        <h1 data-aos="fade-down" data-aos-duration="1000">Our Testimonials</h1>
+    </div>
+    <section class="container-testi">
+        <div class="testimonial mySwiper">
+            <div class="testi-content swiper-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+                <!--<div class="slide swiper-slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Spider-Man.jpg/1200px-Spider-Man.jpg"
+                        alt="" class="image" />
+                    <p style="font-size: 18px;">
+                        A testimonial from a
+                        client who benefited from your product or service.
+                        Testimonials can be a highly effective way of establishing
+                        credibility and increasing your company's reputation.
+                    </p>
+                    <i class="bx bxs-quote-alt-left quote-icon"></i>
+                    <div class="details">
+                        <span class="name">Spiderman</span>
+                        <span class="job">Student</span>
+                    </div>
+                </div>-->
+				{% for tup in test %}
+
+                <div class="slide swiper-slide">
+                    <img src="static/image_uploads/{{ tup[2] }}" alt="" class="image" />
+                    <p style="font-size: 18px;">
+                        {{ tup[1] }}
+                    </p>
+                    <i class="bx bxs-quote-alt-left quote-icon"></i>
+                    <div class="details">
+                        <span class="name">{{ tup[0] }}</span>
+                        <span class="job">{{ tup[3] }}</span>
+                    </div>
+                </div>
+				{% endfor %}
+            </div>
+            {% for item in tup %}
+
+            <tr>
+                <div class="slide swiper-slide">
+                    <img src="./default_images/Spider-Man.jpg"
+                        alt="" class="image" />
+                    <p style="font-size: 18px;">
+                        A testimonial from a
+                        client who benefited from your product or service.
+                        Testimonials can be a highly effective way of establishing
+                        credibility and increasing your company's reputation.
+                    </p>
+                    <i class="bx bxs-quote-alt-left quote-icon"></i>
+                    <div class="details">
+                        <span class="name">Spiderman</span>
+                        <span class="job">Student</span>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="swiper-button-next nav-btn"></div>
+                <div class="swiper-button-prev nav-btn"></div>
+                <div class="swiper-pagination"></div>
+        </div>
+    </section>
+</div>
+<!--End Testimonial Block-->
+
+<!--End Last Block for Video introduction-->
+
+
+<!--Swiper Js-->
+<script src="./static/js/swiper-bundle.min.js"></script>
+
+<!--Javascript-->
+<script src="./static/js/script.js"></script>
+
+<!--Amination-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+{% endblock %}
